@@ -6,7 +6,11 @@ import (
 )
 
 func main() {
-	arg := os.Args[1]
+	args := os.Args
+	if len(args) < 2 {
+		return
+	}
+	arg := args[1]
 	//get substring from last / to end
 	lastIndex := strings.LastIndex(arg, "/")
 	last := arg[lastIndex+1:]
